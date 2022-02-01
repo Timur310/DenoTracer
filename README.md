@@ -157,7 +157,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 
 - [ ] Add More objects
-- [ ] Spped up Rendering (refactor the core raytracer)
+- [ ] Speed up Rendering (refactor the core raytracer)
 - [ ] Better Dialectric material
 - [ ] More Material type
 - [ ] Better option handling
