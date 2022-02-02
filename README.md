@@ -21,7 +21,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Timur310/DenoTracer">
-    <img src="untitled.png" alt="Logo" width="256" height="256">
+    <img src="Images/logo.png" alt="Logo" width="256" height="256">
   </a>
 
   <h3 align="center">DenoTracer</h3>
