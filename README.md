@@ -155,6 +155,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Iteration instead of recursion?
 - [ ] Refactor Vector3 class
 - [ ] Use GPU instead of CPU
+- [ ] Axis aligned bounding box
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
