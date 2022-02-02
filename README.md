@@ -27,7 +27,7 @@
   <h3 align="center">DenoTracer</h3>
 
   <p align="center">
-    Basic raytracer built with Typescript and Deno
+    Basic CPU raytracer built with Typescript and Deno
     <!-- <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
@@ -154,6 +154,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Better option handling
 - [ ] Iteration instead of recursion?
 - [ ] Refactor Vector3 class
+- [ ] Use GPU instead of CPU
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
