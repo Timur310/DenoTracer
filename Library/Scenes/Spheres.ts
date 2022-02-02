@@ -78,6 +78,6 @@ const camera = new Camera(lookfrom,lookat,vUp,aperture,dist_to_focus);
 // world
 const world = randomScene();
 
-const sample = 5;
+const sample = 100;
 
 rayTracer.renderImage(camera, world,sample);

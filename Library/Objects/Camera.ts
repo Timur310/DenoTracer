@@ -34,11 +34,11 @@ export class Camera
         this.aperture = aperture;
         this.focusDist = focusDist;
 
-        this.theta = degreeToRadian(90)
+        this.theta = degreeToRadian(40)
         this.h = Math.tan(this.theta/2.0);
     
         this.viewport_height = 2.0 * this.h;
-        this.viewport_width = 16/9 * this.viewport_height;
+        this.viewport_width = 1 * this.viewport_height;
 
         this.lookAt = lookAt;
         this.lookFrom = lookFrom;

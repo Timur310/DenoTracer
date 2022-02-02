@@ -44,7 +44,7 @@ export class Sphere implements Hittable
             }
         }
         Record.Instance.t = root;
-        Record.Instance.p = r.at(Record.Instance.t);
+        Record.Instance.p = r.at(root);
         const outward_normal = substractVector(Record.Instance.p,this.cen).divideN(this.radius);
         Record.Instance.set_front_face(r,outward_normal);
         Record.Instance.obj_id = this.id
