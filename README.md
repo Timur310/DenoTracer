@@ -15,17 +15,15 @@
 
 <!-- ABOUT THE PROJECT -->
 
-<p align="center">
-  <img src="Images/Spheres_sample.png" alt="100 sample" width=512/>
-  <div align="center"> Sphere demonstration - 100 samples used</div>
-</p>
-
-<p align="center">
-  <img src="Images/Spheres_sample_denoised.jpeg" alt="100 sample" width=512/>
-  <div align="center"> Sphere demonstration - 100 samples used - Denoised</div>
-</p>
-
 ## About The Project
+
+<p float="left">
+  <img src="Images/sample_scene.png" alt="100 sample" width="500"/>
+  <img src="Images/Spheres_sample_denoised.jpg" alt="100 sample Denoised" width="500"/>
+</p>
+
+---
+
 This project started as hobby learning the basics of raytracing, using typescript.
 Probably not the fastest and most effiecent raytracer on the net, but it's still does the job.
 The whole project is still in development as I'm still learning the fundamentals of raytracing.
