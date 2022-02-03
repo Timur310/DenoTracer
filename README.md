@@ -17,20 +17,9 @@
 
 ## About The Project
 
-<p float="left">
-  <img src="Images/sample_scene.png" alt="100 sample" width="500"/>
-  <img src="Images/Spheres_sample_denoised.jpg" alt="100 sample Denoised" width="500"/>
-</p>
-
----
-
 This project started as hobby learning the basics of raytracing, using typescript.
 Probably not the fastest and most effiecent raytracer on the net, but it's still does the job.
 The whole project is still in development as I'm still learning the fundamentals of raytracing.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 ### Features
  
@@ -41,7 +30,12 @@ The whole project is still in development as I'm still learning the fundamentals
 * Depth of field
 * Basic sphere object
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+## Sample Images
+
+<p float="left">
+  <img src="Images/sample_scene.png" alt="100 sample" width="500"/>
+  <img src="Images/Spheres_sample_denoised.jpg" alt="100 sample Denoised" width="500"/>
+</p>
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -57,9 +51,6 @@ The whole project is still in development as I'm still learning the fundamentals
 - [ ] Axis aligned bounding box
 - [ ] Lighting
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
@@ -70,4 +61,3 @@ Resources that I took inspiration and help from.
 * [Introduction to ray tracing](https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-ray-tracing/ray-tracing-practical-example)
 * [A Minimal Ray-Tracer: Rendering Simple Shapes](https://www.scratchapixel.com/lessons/3d-basic-rendering/minimal-ray-tracer-rendering-simple-shapes/ray-sphere-intersection)
 * [Introduction to Shading](https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-shading/diffuse-lambertian-shading)
-<p align="right">(<a href="#top">back to top</a>)</p>
