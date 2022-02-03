@@ -12,6 +12,8 @@ export class Record
     t = 0;
     front_face = false;
     obj_id = -1;
+    u = 0;
+    v = 0;
     scattered = new Ray(new Point(0,0,0), new Vector3(0,0,0));
     attenuation = new Color(0,0,0);
     obj_created = -1;

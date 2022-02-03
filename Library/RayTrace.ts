@@ -7,10 +7,10 @@ import { random } from "./Utils/MathUtils.ts";
 export class RayTrace 
 {
 
-    async renderImage(camera: Camera, world: HitableList,samples_per_pixel: number): Promise<void> 
+    async renderImage(camera: Camera, world: HitableList,samples_per_pixel: number,img_width: number,aspectratio: number): Promise<void> 
     {
-        const aspect_ratio = 1.0;
-        const image_width = 600;
+        const aspect_ratio = aspectratio;
+        const image_width = img_width;
         const image_height = image_width / aspect_ratio;
         const max_depth = 50;
         

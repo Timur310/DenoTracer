@@ -66,18 +66,22 @@ function randomScene(): HitableList
 
 const rayTracer = new RayTrace()
 
+// settings
+const img_width = 512;
+const sample = 100;
+const aspect_ratio = 16/9
+
+
 // Camera
 const lookfrom = new Point(-0.25,1,0.5);
 const lookat = new Point(0,0,-1);
 const vUp = new Vector3(0,1,0);
 const dist_to_focus = 1.5
 const aperture = 0.1;
-const camera = new Camera(lookfrom,lookat,vUp,aperture,dist_to_focus);
+const camera = new Camera(lookfrom,lookat,vUp,aperture,dist_to_focus,90,aspect_ratio);
 
 
 // world
 const world = randomScene();
 
-const sample = 100;
-
-rayTracer.renderImage(camera, world,sample);
+rayTracer.renderImage(camera, world,sample,img_width,aspect_ratio);

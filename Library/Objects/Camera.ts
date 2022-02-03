@@ -29,16 +29,16 @@ export class Camera
     private vertical: Vector3;
     private lower_left_corner: Vector3;
 
-    constructor(lookFrom: Point, lookAt: Point, vUp: Vector3, aperture: number,focusDist: number)
+    constructor(lookFrom: Point, lookAt: Point, vUp: Vector3, aperture: number,focusDist: number, fov: number,aspect_ratio: number)
     {
         this.aperture = aperture;
         this.focusDist = focusDist;
 
-        this.theta = degreeToRadian(40)
+        this.theta = degreeToRadian(fov);
         this.h = Math.tan(this.theta/2.0);
     
         this.viewport_height = 2.0 * this.h;
-        this.viewport_width = 1 * this.viewport_height;
+        this.viewport_width = aspect_ratio * this.viewport_height;
 
         this.lookAt = lookAt;
         this.lookFrom = lookFrom;
