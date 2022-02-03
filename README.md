@@ -20,7 +20,6 @@
 
 This project started as hobby learning the basics of raytracing, using typescript.
 Probably not the fastest and most effiecent raytracer on the net, but it's still does the job.
-The Dialectric material is still buggy and the camera is also can act weirdly when positioned in specific angles.
 The whole project is still in development as I'm still learning the fundamentals of raytracing.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
