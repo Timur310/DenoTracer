@@ -15,13 +15,18 @@ import { xy_rect } from "../Objects/xy_rect.ts";
 
 const rayTracer = new RayTrace()
 
+// settings
+const sample = 50;
+const img_width = 600;
+const aspect_ratio = 1;
+
 // Camera
 const lookfrom = new Point(278,278,-800);
 const lookat = new Point(278, 278, 0);
 const vUp = new Vector3(0,1,0);
 const dist_to_focus = 1.5
 const aperture = 0.001;
-const camera = new Camera(lookfrom,lookat,vUp,aperture,dist_to_focus,40);
+const camera = new Camera(lookfrom,lookat,vUp,aperture,dist_to_focus,40,aspect_ratio);
 
 
 // world
@@ -33,6 +38,4 @@ world.add(new xz_rect(0, 555, 0, 555, 0,new Lambertian(new Color(.73, .73, .73))
 world.add(new xz_rect(0, 555, 0, 555, 555,new Lambertian(new Color(.73, .73, .73))));
 world.add(new xy_rect(0, 555, 0, 555, 555,new Lambertian(new Color(.73, .73, .73))));
 
-const sample = 50;
-const img_width = 600;
-rayTracer.renderImage(camera, world,sample,img_width);
+rayTracer.renderImage(camera, world,sample,img_width,aspect_ratio);
