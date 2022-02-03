@@ -15,9 +15,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 This project started as hobby learning the basics of raytracing, using typescript.
 Probably not the fastest and most effiecent raytracer on the net, but it's still does the job.
 The whole project is still in development as I'm still learning the fundamentals of raytracing.
