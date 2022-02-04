@@ -8,6 +8,7 @@ import { Vector3 } from "../Vector3.ts";
 import { yz_rect } from "../Objects/yz_rect.ts";
 import { xz_rect } from "../Objects/xz_rect.ts";
 import { xy_rect } from "../Objects/xy_rect.ts";
+import { Box } from "../Objects/Box.ts";
 
 
 
@@ -37,5 +38,10 @@ world.add(new yz_rect(0, 555, 0, 555, 0,new Lambertian(new Color(.65, .05, .05))
 world.add(new xz_rect(0, 555, 0, 555, 0,new Lambertian(new Color(.73, .73, .73))));
 world.add(new xz_rect(0, 555, 0, 555, 555,new Lambertian(new Color(.73, .73, .73))));
 world.add(new xy_rect(0, 555, 0, 555, 555,new Lambertian(new Color(.73, .73, .73))));
+
+world.add(new xz_rect(213, 343, 227, 332, 554,new Lambertian(new Color(.23, .10, .44)))); // light
+
+world.add(new Box(new Point(130,0,65),new Point(295,165,230),new Lambertian(new Color(.73, .73, .73))));
+world.add(new Box(new Point(265,0,295),new Point(430,330,460),new Lambertian(new Color(.73, .73, .73))));
 
 rayTracer.renderImage(camera, world,sample,img_width,aspect_ratio);

@@ -12,7 +12,6 @@ export class xy_rect implements Hittable
     y0: number;
     y1: number;
     k: number;
-    private id: number;
 
     constructor(x0: number, x1: number, y0: number, y1: number, k: number, mat: Material)
     {
@@ -22,11 +21,8 @@ export class xy_rect implements Hittable
         this.x1 = x1;
         this.y0 = y0;
         this.y1 = y1
-        this.id = Record.Instance.obj_created+1;
-        Record.Instance.obj_created +=1;
     }
 
-    /**Axis aligned bounding box */
     hit(r: Ray,t_min: number,t_max: number): boolean 
     {
         const t = (this.k-r.getOrigin.getZ) / r.getDirection.getZ;
@@ -45,7 +41,7 @@ export class xy_rect implements Hittable
         Record.Instance.p = r.at(t);
         const outward_normal = new Vector3(0,0,1);
         Record.Instance.set_front_face(r,outward_normal);
-        Record.Instance.obj_id = this.id
+        Record.Instance.material = this.mat;
         return true;
     }
     

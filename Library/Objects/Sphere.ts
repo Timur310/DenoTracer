@@ -1,24 +1,30 @@
 import { Hittable } from "../Hittable.ts";
-import { Material } from "../Materials/Material.ts";
 import { Point } from "../Point.ts";
 import {Ray} from '../Ray.ts'
 import { Record } from "../Record.ts";
 import { dot, substractVector } from "../Utils/vecUtil.ts";
+import { Material } from "../Materials/Material.ts";
 
 export class Sphere implements Hittable
 {
     private cen: Point;
     private radius: number;
     mat: Material;
-    private id: number;
     
     constructor(center: Point, radius: number, mat: Material)
     {
         this.mat = mat;
         this.cen = center;
         this.radius = radius;
-        this.id = Record.Instance.obj_created+1;
-        Record.Instance.obj_created +=1;
+    }
+
+    public static sphereUV(p: Point): void
+    {
+        const theta = Math.acos(-p.getY);
+        const phi = Math.atan2(-p.getZ, p.getX) + Math.PI;
+
+        Record.Instance.u = phi / (2*Math.PI);
+        Record.Instance.v = theta / Math.PI;
     }
 
     hit(r: Ray,t_min: number,t_max: number): boolean 
@@ -47,7 +53,8 @@ export class Sphere implements Hittable
         Record.Instance.p = r.at(root);
         const outward_normal = substractVector(Record.Instance.p,this.cen).divideN(this.radius);
         Record.Instance.set_front_face(r,outward_normal);
-        Record.Instance.obj_id = this.id
+        Sphere.sphereUV(outward_normal);
+        Record.Instance.material = this.mat;
         return true;
     }
     

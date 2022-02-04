@@ -14,6 +14,12 @@ export class Metal implements Material
         this.fuzz = fuzz < 1 ? fuzz : 1;
     }
 
+    emitted(): Color 
+    {
+        return new Color();
+    }
+
+
     scatter(r_in: Ray): boolean
     {
         const reflected = reflect(unitVector(r_in.getDirection), Record.Instance.normal);

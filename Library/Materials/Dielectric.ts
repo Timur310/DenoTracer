@@ -14,6 +14,11 @@ export class Dielectric implements Material
         this.refractionIndex = refractionIndex;
     }
 
+    emitted(): Color 
+    {
+        return new Color();
+    }
+
     private reflectance(cosine: number, ref_idx: number): number
     {
         // Schlick approximation for reflectance

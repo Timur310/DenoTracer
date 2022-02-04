@@ -1,4 +1,5 @@
 import { Color } from "./Color.ts";
+import { Material } from "./Materials/Material.ts";
 import { Point } from "./Point.ts";
 import { Ray } from "./Ray.ts";
 import { dot } from "./Utils/vecUtil.ts";
@@ -11,12 +12,11 @@ export class Record
     normal = new Vector3(0,0,0);
     t = 0;
     front_face = false;
-    obj_id = -1;
     u = 0;
     v = 0;
     scattered = new Ray(new Point(0,0,0), new Vector3(0,0,0));
     attenuation = new Color(0,0,0);
-    obj_created = -1;
+    material: any;
     private static _instance: Record;
 
     set_front_face(r: Ray, outward_normal: Vector3): void

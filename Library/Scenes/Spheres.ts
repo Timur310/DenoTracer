@@ -10,13 +10,16 @@ import { Dielectric } from "../Materials/Dielectric.ts";
 import { Vector3 } from "../Vector3.ts";
 import { substractVector } from "../Utils/vecUtil.ts";
 import { random, randomBetween } from "../Utils/MathUtils.ts";
+import { SolidColor } from "../Materials/solidColor.ts";
+import { CheckerTexture } from "../Materials/CheckerTexture.ts"
+import { Record } from "../Record.ts";
 
 
 function randomScene(): HitableList
 {
     const world = new HitableList();
 
-    const ground_material = new Lambertian(new Color(0.5, 0.5, 0.5));
+    const ground_material = new CheckerTexture(new SolidColor(new Color(0.2, 0.3, 0.1)), new SolidColor(new Color(0.9, 0.9, 0.9)));
 
     for(let a=-11;a<11;a++)
     {
@@ -30,7 +33,7 @@ function randomScene(): HitableList
                 if(mat<0.8)
                 {
                     const albedo = new Color(random(),random(),random());
-                    const sphere_mat = new Lambertian(albedo);
+                    const sphere_mat = new Lambertian(new SolidColor(albedo));
                     world.add(new Sphere(center,randomBetween(0.2,0.3),sphere_mat));
                 }
                 else if(mat<0.95)
@@ -51,7 +54,7 @@ function randomScene(): HitableList
 
     const mat1 = new Dielectric(1.5);
     const mat3 = new Metal(new Color(0.7,0.6,0.5),0.0);
-    const mat2 = new Lambertian(new Color(0.4,0.2,0.1));
+    const mat2 = new Lambertian(new SolidColor(new Color(0.4,0.2,0.1)));
 
     world.add(new Sphere(new Point(-1.5,0,-3),1.0,mat1));
 
@@ -59,7 +62,7 @@ function randomScene(): HitableList
 
     world.add(new Sphere(new Point(1,0,-1),1.0,mat2));
 
-    world.add(new Sphere(new Color( 0.0, -1000.5, -1.0),1000,ground_material));
+    world.add(new Sphere(new Color( 0.0, -1000.5, -1.0),1000,new Lambertian(ground_material)));
 
     return world;
 }
@@ -67,8 +70,8 @@ function randomScene(): HitableList
 const rayTracer = new RayTrace()
 
 // settings
-const img_width = 512;
-const sample = 100;
+const img_width = 256;
+const sample = 10;
 const aspect_ratio = 16/9
 
 
