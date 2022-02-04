@@ -19,7 +19,7 @@ import { DiffuseLight } from "../Materials/DiffuseLight.ts"
 const rayTracer = new RayTrace()
 
 // settings
-const sample = 200;
+const sample = 600;
 const img_width = 300;
 const aspect_ratio = 1;
 
