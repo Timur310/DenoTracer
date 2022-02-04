@@ -37,20 +37,6 @@ The whole project is still in development as I'm still learning the fundamentals
   <img src="Images/Spheres_sample_denoised.jpg" alt="100 sample Denoised" width="500"/>
 </p>
 
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Add More objects
-- [ ] Speed up Rendering (refactor the core raytracer)
-- [ ] Better Dialectric material
-- [ ] More Material type
-- [ ] Better option handling
-- [ ] Iteration instead of recursion?
-- [ ] Refactor Vector3 class
-- [ ] Use GPU instead of CPU
-- [ ] Axis aligned bounding box
-- [ ] Lighting
-
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
