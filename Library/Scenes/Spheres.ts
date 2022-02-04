@@ -12,7 +12,6 @@ import { substractVector } from "../Utils/vecUtil.ts";
 import { random, randomBetween } from "../Utils/MathUtils.ts";
 import { SolidColor } from "../Materials/solidColor.ts";
 import { CheckerTexture } from "../Materials/CheckerTexture.ts"
-import { Record } from "../Record.ts";
 
 
 function randomScene(): HitableList
@@ -70,8 +69,8 @@ function randomScene(): HitableList
 const rayTracer = new RayTrace()
 
 // settings
-const img_width = 256;
-const sample = 10;
+const img_width = 512;
+const sample = 50;
 const aspect_ratio = 16/9
 
 

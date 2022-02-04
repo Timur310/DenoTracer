@@ -15,7 +15,7 @@ export class Lambertian implements Material
     
     emitted(): Color 
     {
-        return new Color();
+        return new Color(0,0,0);
     }
 
     scatter(): boolean

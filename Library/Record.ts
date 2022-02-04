@@ -16,7 +16,7 @@ export class Record
     v = 0;
     scattered = new Ray(new Point(0,0,0), new Vector3(0,0,0));
     attenuation = new Color(0,0,0);
-    material: any;
+    material!: Material;
     private static _instance: Record;
 
     set_front_face(r: Ray, outward_normal: Vector3): void
