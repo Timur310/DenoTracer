@@ -48,7 +48,7 @@ const world = scene();
 
 const camera = new Camera(lookFrom,lookat,new Vector3(0,1,0),0.01,2,vfov,aspect_ratio);
 //materials
-const diffMat = new DiffuseLight(new Color(7,7,7));
+const diffMat = new Lambertian(new SolidColor(new Color(21,21,34)));
 const dieMat = new Dielectric(1.5);
 //add sphere
 world.add(new Sphere(new Point(220,280,300), 80,dieMat))
