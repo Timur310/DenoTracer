@@ -1,30 +1,25 @@
-import {Point} from './Point.ts'
+import { Point } from "./Point.ts";
 import { addVector, multiplyVectorN } from "./Utils/vecUtil.ts";
 import { Vector3 } from "./Vector3.ts";
-export class Ray 
-{
-    private origin: Point;
-    private direction: Vector3;
-    
-    constructor(o: Point, v: Vector3)
-    {
-        this.origin = o;
-        this.direction = v;
-    }
+export class Ray {
+  private origin: Point;
+  private direction: Vector3;
 
-    get getOrigin(): Point
-    {
-        return this.origin;
-    }
+  constructor(o: Point, v: Vector3) {
+	this.origin = o;
+	this.direction = v;
+  }
 
-    get getDirection(): Vector3
-    {
-        return this.direction;
-    }
+  get getOrigin(): Point {
+	return this.origin;
+  }
 
-    at(t: number): Point
-    {
-        const dir = multiplyVectorN(this.getDirection, t);
-        return addVector(this.origin,dir);
-    }
+  get getDirection(): Vector3 {
+	return this.direction;
+  }
+
+  at(t: number): Point {
+	const dir = multiplyVectorN(this.getDirection, t);
+	return addVector(this.origin, dir);
+  }
 }
