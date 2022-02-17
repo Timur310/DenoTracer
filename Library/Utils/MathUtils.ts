@@ -8,6 +8,10 @@ export function randomBetween(min: number, max: number): number {
   return min + (max - min) * random();
 }
 
+export function randomBetweenInt(min: number, max: number): number {
+  return Math.trunc(randomBetween(min,max));
+}
+
 export function clamp(x: number, min: number, max: number): number {
   return Math.min(Math.max(x, min), max);
 }

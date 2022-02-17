@@ -45,4 +45,14 @@ export class aabb
         
         return t_max >= t_min;
     }
+
+    public get min(): Point
+    {
+        return this.minimum;
+    }
+
+    public get max(): Point
+    {
+        return this.maximum;
+    }
 }
