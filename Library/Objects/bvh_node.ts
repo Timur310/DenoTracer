@@ -18,7 +18,7 @@ export class bvh_node implements bvh_tree<Hittable>
     left!: bvh_node;
     right!: bvh_node;
     data!: Hittable;
-    private box: aabb = new aabb();
+    box: aabb = new aabb();
 
     constructor(objects: HitableList,start: number, end: number)
     {
