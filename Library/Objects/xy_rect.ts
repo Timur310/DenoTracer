@@ -1,5 +1,7 @@
+import { aabb } from "../aabb.ts";
 import { Hittable } from "../Hittable.ts";
 import { Material } from "../Materials/Material.ts";
+import { Point } from "../Point.ts";
 import { Ray } from "../Ray.ts";
 import { Record } from "../Record.ts";
 import { Vector3 } from "../Vector3.ts";
@@ -26,6 +28,11 @@ export class xy_rect implements Hittable {
     this.x1 = x1;
     this.y0 = y0;
     this.y1 = y1;
+  }
+  bounding_box(): boolean
+  {
+      Record.Instance.output_box = new aabb(new Point(this.x0,this.y0,this.k-0.0001),new Point(this.x1,this.y1,this.k+0.0001));
+      return true;
   }
 
   hit(r: Ray, t_min: number, t_max: number): boolean {

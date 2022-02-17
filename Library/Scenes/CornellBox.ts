@@ -15,8 +15,8 @@ import { DiffuseLight } from "../Materials/DiffuseLight.ts";
 const rayTracer = new RayTrace();
 
 // settings
-const sample = 600;
-const img_width = 600;
+const sample = 100;
+const img_width = 300;
 const aspect_ratio = 1;
 
 // Camera
@@ -90,7 +90,7 @@ world.add(
 );
 
 world.add(
-  new xz_rect(213, 343, 227, 332, 554, new DiffuseLight(new Color(15, 15, 15))),
+  new xz_rect(213-50, 343+50, 227-50, 332+50, 554, new DiffuseLight(new Color(15, 15, 15))),
 ); // light
 
 world.add(

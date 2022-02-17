@@ -1,20 +1,22 @@
+import { aabb } from "../aabb.ts";
 import { Hittable } from "../Hittable.ts";
 import { Material } from "../Materials/Material.ts";
+import { Point } from "../Point.ts";
 import { Ray } from "../Ray.ts";
 import { Record } from "../Record.ts";
 import { Vector3 } from "../Vector3.ts";
 
 export class yz_rect implements Hittable {
   mat: Material;
-  x0: number;
-  x1: number;
+  z0: number;
+  z1: number;
   y0: number;
   y1: number;
   k: number;
 
   constructor(
-    x0: number,
-    x1: number,
+    z0: number,
+    z1: number,
     y0: number,
     y1: number,
     k: number,
@@ -22,10 +24,16 @@ export class yz_rect implements Hittable {
   ) {
     this.mat = mat;
     this.k = k;
-    this.x0 = x0;
-    this.x1 = x1;
+    this.z0 = z0;
+    this.z1 = z1;
     this.y0 = y0;
     this.y1 = y1;
+  }
+
+  bounding_box(): boolean
+  {
+    Record.Instance.output_box = new aabb(new Point(this.k-0.0001,this.y0,this.z0),new Point(this.k+0.0001,this.y1,this.z1));
+    return true;
   }
 
   hit(r: Ray, t_min: number, t_max: number): boolean {
@@ -35,7 +43,7 @@ export class yz_rect implements Hittable {
     }
     const y = r.getOrigin.getY + t * r.getDirection.getY;
     const z = r.getOrigin.getZ + t * r.getDirection.getZ;
-    if (y < this.x0 || y > this.x1 || z < this.y0 || z > this.y1) {
+    if (y < this.z0 || y > this.z1 || z < this.y0 || z > this.y1) {
       return false;
     }
 

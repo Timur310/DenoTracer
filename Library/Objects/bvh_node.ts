@@ -4,7 +4,7 @@ import { HitableList } from "../HittableList.ts";
 import { Material } from "../Materials/Material.ts";
 import { Ray } from "../Ray.ts";
 import { Record } from "../Record.ts";
-import { randomBetween } from "../Utils/MathUtils.ts";
+import { randomBetweenInt } from "../Utils/MathUtils.ts";
 
 export interface bvh_tree<T> {
     left?: bvh_tree<T>;
