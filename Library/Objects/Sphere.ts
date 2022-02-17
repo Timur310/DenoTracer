@@ -2,8 +2,10 @@ import { Hittable } from "../Hittable.ts";
 import { Point } from "../Point.ts";
 import { Ray } from "../Ray.ts";
 import { Record } from "../Record.ts";
-import { dot, substractVector } from "../Utils/vecUtil.ts";
+import { addVector, dot, substractVector } from "../Utils/vecUtil.ts";
 import { Material } from "../Materials/Material.ts";
+import { aabb } from "../aabb.ts";
+import { Vector3 } from "../Vector3.ts";
 
 export class Sphere implements Hittable {
   private cen: Point;
@@ -14,6 +16,15 @@ export class Sphere implements Hittable {
     this.mat = mat;
     this.cen = center;
     this.radius = radius;
+  }
+  
+  bounding_box(): boolean 
+  {
+        Record.Instance.output_box = new aabb(
+          substractVector(this.cen,new Vector3(this.radius,this.radius,this.radius)),
+          addVector(this.cen,new Vector3(this.radius,this.radius,this.radius))
+        )
+        return true;
   }
 
   public static sphereUV(p: Point): void {

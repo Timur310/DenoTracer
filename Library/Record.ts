@@ -4,6 +4,7 @@ import { Point } from "./Point.ts";
 import { Ray } from "./Ray.ts";
 import { dot } from "./Utils/vecUtil.ts";
 import { Vector3 } from "./Vector3.ts";
+import { aabb } from './aabb.ts';
 
 /** global class to track infomation */
 export class Record {
@@ -13,6 +14,7 @@ export class Record {
   front_face = false;
   u = 0;
   v = 0;
+  output_box = new aabb();
   scattered = new Ray(new Point(0, 0, 0), new Vector3(0, 0, 0));
   attenuation = new Color(0, 0, 0);
   material!: Material;

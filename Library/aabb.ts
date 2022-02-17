@@ -3,6 +3,23 @@ import { Ray } from "./Ray.ts";
 
 export class aabb
 {
+    static surrounding_box(box0: aabb, box1: aabb): aabb 
+    {
+        const small = new Point(
+            Math.min(box0.minimum.getX, box1.minimum.getX),
+            Math.min(box0.minimum.getY, box1.minimum.getY),
+            Math.min(box0.minimum.getZ, box1.minimum.getZ)
+        );
+
+        const big = new Point(
+            Math.max(box0.maximum.getX, box1.maximum.getX),
+            Math.max(box0.maximum.getY, box1.maximum.getY),
+            Math.max(box0.maximum.getZ, box1.maximum.getZ)
+        );
+
+        return new aabb(small,big);
+    }
+
     private minimum: Point;
     private maximum: Point;
     
@@ -25,6 +42,7 @@ export class aabb
 
         t_min = Math.max(t_min, Math.min(ty1,ty2));
         t_max = Math.min(t_max, Math.max(ty1,ty2));
+        
         return t_max >= t_min;
     }
 }
