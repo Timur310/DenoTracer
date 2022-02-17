@@ -6,11 +6,18 @@ import { Ray } from "../Ray.ts";
 import { Record } from "../Record.ts";
 import { randomBetween } from "../Utils/MathUtils.ts";
 
-export class bvh_node
+export interface bvh_tree<T> {
+    left?: bvh_tree<T>;
+    right?: bvh_tree<T>;
+    data: T;
+}
+
+export class bvh_node implements bvh_tree<Hittable>
 {
     mat!: Material;
-    private _left!: Hittable;
-    private _right!: Hittable;
+    left!: bvh_node;
+    right!: bvh_node;
+    data!: Hittable;
     private box: aabb = new aabb();
 
     constructor(objects: HitableList,start: number, end: number)
@@ -24,18 +31,18 @@ export class bvh_node
 
         if(objectSpan === 1)
         {
-            this._left = this._right = objs[start];
+            this.left.data = this.right.data = objs[start];
         }else if(objectSpan === 2)
         {
             if(this.compare(objs[start],objs[start+1], comparator))
             {
-                this._left = objs[start];
-                this._right = objs[start+1];
+                this.left.data = objs[start];
+                this.right.data = objs[start+1];
             }
             else
             {
-                this._left = objs[start+1];
-                this._right = objs[start];
+                this.left.data = objs[start+1];
+                this.right.data = objs[start];
             }
         }
         else
@@ -49,8 +56,8 @@ export class bvh_node
     {
         if(!this.box.hit(r,t_min,t_max)) return false;
 
-        const hit_left = this._left.hit(r,t_min,t_max);
-        const hit_right = this._right.hit(r,t_min,t_max);
+        const hit_left = this.left.data.hit(r,t_min,t_max);
+        const hit_right = this.right.data.hit(r,t_min,t_max);
 
         return hit_left || hit_right;
     }
