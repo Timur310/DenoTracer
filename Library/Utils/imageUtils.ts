@@ -22,7 +22,7 @@ export function writeColor(pixeColor: Color, sample: number): string {
 export function rayColor(r: Ray, world: HitableList, depth: number): Color {
   if (depth <= 0) return new Color(0, 0, 0);
 
-  if (!world.hit(r, 0.001, Infinity)) {
+  if (!world.hit(r, 0.001, Number.POSITIVE_INFINITY)) {
     return new Color(0, 0, 0);
   }
 
