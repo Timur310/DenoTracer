@@ -28,77 +28,88 @@ const vUp = new Vector3(0, 1, 0);
 const dist_to_focus = 1.5;
 const aperture = 0.001;
 const camera = new Camera(
-  lookfrom,
-  lookat,
-  vUp,
-  aperture,
-  dist_to_focus,
-  40,
-  aspect_ratio,
+	lookfrom,
+	lookat,
+	vUp,
+	aperture,
+	dist_to_focus,
+	40,
+	aspect_ratio,
 );
 
 // world
 const world = new HitableList();
 
 world.add(
-  new yz_rect(
-    0,
-    555,
-    0,
-    555,
-    555,
-    new Lambertian(new SolidColor(new Color(.12, .45, .15))),
-  ),
+	new yz_rect(
+		0,
+		555,
+		0,
+		555,
+		555,
+		new Lambertian(new SolidColor(new Color(.12, .45, .15))),
+	),
 );
 world.add(
-  new yz_rect(
-    0,
-    555,
-    0,
-    555,
-    0,
-    new Lambertian(new SolidColor(new Color(.65, .05, .05))),
-  ),
+	new yz_rect(
+		0,
+		555,
+		0,
+		555,
+		0,
+		new Lambertian(new SolidColor(new Color(.65, .05, .05))),
+	),
 );
 world.add(
-  new xz_rect(
-    0,
-    555,
-    0,
-    555,
-    0,
-    new Lambertian(new SolidColor(new Color(.73, .73, .73))),
-  ),
+	new xz_rect(
+		0,
+		555,
+		0,
+		555,
+		0,
+		new Lambertian(new SolidColor(new Color(.73, .73, .73))),
+	),
 );
 world.add(
-  new xz_rect(
-    0,
-    555,
-    0,
-    555,
-    555,
-    new Lambertian(new SolidColor(new Color(.73, .73, .73))),
-  ),
+	new xz_rect(
+		0,
+		555,
+		0,
+		555,
+		555,
+		new Lambertian(new SolidColor(new Color(.73, .73, .73))),
+	),
 );
 world.add(
-  new xy_rect(
-    0,
-    555,
-    0,
-    555,
-    555,
-    new Lambertian(new SolidColor(new Color(.73, .73, .73))),
-  ),
+	new xy_rect(
+		0,
+		555,
+		0,
+		555,
+		555,
+		new Lambertian(new SolidColor(new Color(.73, .73, .73))),
+	),
 );
 
 world.add(
-  new xz_rect(213-50, 343+50, 227-50, 332+50, 554, new DiffuseLight(new Color(15, 15, 15))),
+	new xz_rect(
+		213 - 50,
+		343 + 50,
+		227 - 50,
+		332 + 50,
+		554,
+		new DiffuseLight(new Color(15, 15, 15)),
+	),
 ); // light
 
-const testBox = new Rotate_y(new Box(
-  new Point(130, 0, 65),
-  new Point(165, 165, 165),
-  new Lambertian(new SolidColor(new Color(.73, .73, .73)))),-45);
+const testBox = new Rotate_y(
+	new Box(
+		new Point(130, 0, 65),
+		new Point(165, 165, 165),
+		new Lambertian(new SolidColor(new Color(.73, .73, .73))),
+	),
+	-45,
+);
 
 world.add(testBox);
 
