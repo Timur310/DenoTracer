@@ -36,12 +36,12 @@ export class Rotate_y implements Hittable {
 		for (let i = 0; i < 2; i++) {
 			for (let j = 0; j < 2; j++) {
 				for (let k = 0; k < 2; k++) {
-					const x = i * this.bbox.max.getX +
-						(1 - i) * this.bbox.min.getX;
-					const y = j * this.bbox.max.getY +
-						(1 - j) * this.bbox.min.getY;
-					const z = k * this.bbox.max.getZ +
-						(1 - k) * this.bbox.min.getZ;
+					const x = i * this.bbox.max.x +
+						(1 - i) * this.bbox.min.x;
+					const y = j * this.bbox.max.y +
+						(1 - j) * this.bbox.min.y;
+					const z = k * this.bbox.max.z +
+						(1 - k) * this.bbox.min.z;
 
 					const newx = this.cos_theta * x + this.sin_theta * z;
 					const newz = -this.sin_theta * x + this.cos_theta * z;
@@ -66,14 +66,14 @@ export class Rotate_y implements Hittable {
 
 	hit(r: Ray, t_min: number, t_max: number): boolean {
 		const origin = new Vector3(
-			r.getOrigin.getX,
-			r.getOrigin.getY,
-			r.getOrigin.getZ,
+			r.getOrigin.x,
+			r.getOrigin.y,
+			r.getOrigin.z,
 		);
 		const direction = new Vector3(
-			r.getDirection.getX,
-			r.getDirection.getY,
-			r.getDirection.getZ,
+			r.getDirection.x,
+			r.getDirection.y,
+			r.getDirection.z,
 		);
 
 		origin.atIndexSet(
@@ -99,19 +99,18 @@ export class Rotate_y implements Hittable {
 		);
 
 		const rotated_r = new Ray(origin, direction);
-		console.log(rotated_r, r);
 
 		if (!this.p.hit(rotated_r, t_min, t_max)) return false;
 
 		const p = new Point(
-			Record.Instance.p.getX,
-			Record.Instance.p.getZ,
-			Record.Instance.p.getZ,
+			Record.Instance.p.x,
+			Record.Instance.p.y,
+			Record.Instance.p.z,
 		);
 		const normal = new Point(
-			Record.Instance.normal.getX,
-			Record.Instance.normal.getZ,
-			Record.Instance.normal.getZ,
+			Record.Instance.normal.x,
+			Record.Instance.normal.y,
+			Record.Instance.normal.z,
 		);
 
 		p.atIndexSet(

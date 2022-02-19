@@ -22,24 +22,24 @@ export class Box implements Hittable {
 		this.p2 = p2;
 
 		this.sides.add(
-			new xy_rect(p1.getX, p2.getX, p1.getY, p2.getY, p2.getZ, this.mat),
+			new xy_rect(p1.x, p2.x, p1.y, p2.y, p2.z, this.mat),
 		);
 		this.sides.add(
-			new xy_rect(p1.getX, p2.getX, p1.getY, p2.getY, p1.getZ, this.mat),
-		);
-
-		this.sides.add(
-			new xz_rect(p1.getX, p2.getX, p1.getZ, p2.getZ, p2.getY, this.mat),
-		);
-		this.sides.add(
-			new xz_rect(p1.getX, p2.getX, p1.getZ, p2.getZ, p1.getY, this.mat),
+			new xy_rect(p1.x, p2.x, p1.y, p2.y, p1.z, this.mat),
 		);
 
 		this.sides.add(
-			new yz_rect(p1.getY, p2.getY, p1.getZ, p2.getZ, p1.getX, this.mat),
+			new xz_rect(p1.x, p2.x, p1.z, p2.z, p2.y, this.mat),
 		);
 		this.sides.add(
-			new yz_rect(p1.getY, p2.getY, p1.getZ, p2.getZ, p2.getX, this.mat),
+			new xz_rect(p1.x, p2.x, p1.z, p2.z, p1.y, this.mat),
+		);
+
+		this.sides.add(
+			new yz_rect(p1.y, p2.y, p1.z, p2.z, p1.x, this.mat),
+		);
+		this.sides.add(
+			new yz_rect(p1.y, p2.y, p1.z, p2.z, p2.x, this.mat),
 		);
 	}
 

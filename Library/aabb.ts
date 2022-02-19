@@ -4,15 +4,15 @@ import { Ray } from "./Ray.ts";
 export class aabb {
 	static surrounding_box(box0: aabb, box1: aabb): aabb {
 		const small = new Point(
-			Math.min(box0.minimum.getX, box1.minimum.getX),
-			Math.min(box0.minimum.getY, box1.minimum.getY),
-			Math.min(box0.minimum.getZ, box1.minimum.getZ),
+			Math.min(box0.minimum.x, box1.minimum.x),
+			Math.min(box0.minimum.y, box1.minimum.y),
+			Math.min(box0.minimum.z, box1.minimum.z),
 		);
 
 		const big = new Point(
-			Math.max(box0.maximum.getX, box1.maximum.getX),
-			Math.max(box0.maximum.getY, box1.maximum.getY),
-			Math.max(box0.maximum.getZ, box1.maximum.getZ),
+			Math.max(box0.maximum.x, box1.maximum.x),
+			Math.max(box0.maximum.y, box1.maximum.y),
+			Math.max(box0.maximum.z, box1.maximum.z),
 		);
 
 		return new aabb(small, big);

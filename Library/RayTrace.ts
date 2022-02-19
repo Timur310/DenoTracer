@@ -20,7 +20,7 @@ export class RayTrace {
 		let imgContent = "P3\n" + image_width + " " + image_height + "\n255\n";
 
 		for (let j = image_height - 1; j >= 0; --j) {
-			//console.log(j)
+			console.log(j);
 			for (let i = 0; i < image_width; ++i) {
 				const pixelColor = new Point();
 				for (let s = 0; s < samples_per_pixel; ++s) {
@@ -31,7 +31,7 @@ export class RayTrace {
 				}
 				imgContent += writeColor(pixelColor, samples_per_pixel);
 			}
-			//console.clear()
+			console.clear();
 		}
 		await Deno.writeTextFile("./output.ppm", imgContent);
 	}

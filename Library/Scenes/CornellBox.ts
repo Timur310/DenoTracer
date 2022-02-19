@@ -93,24 +93,40 @@ world.add(
 
 world.add(
 	new xz_rect(
-		213 - 50,
-		343 + 50,
-		227 - 50,
-		332 + 50,
+		213,
+		343,
+		227,
+		332,
 		554,
 		new DiffuseLight(new Color(15, 15, 15)),
 	),
 ); // light
 
-const testBox = new Rotate_y(
-	new Box(
-		new Point(130, 0, 65),
-		new Point(165, 165, 165),
-		new Lambertian(new SolidColor(new Color(.73, .73, .73))),
+const box1 = new Translate(
+	new Rotate_y(
+		new Box(
+			new Point(0, 0, 0),
+			new Point(165, 330, 165),
+			new Lambertian(new SolidColor(new Color(.73, .73, .73))),
+		),
+		15,
 	),
-	-45,
+	new Vector3(265, 0, 295),
 );
 
-world.add(testBox);
+const box2 = new Translate(
+	new Rotate_y(
+		new Box(
+			new Point(0, 0, 0),
+			new Point(165, 165, 165),
+			new Lambertian(new SolidColor(new Color(.73, .73, .73))),
+		),
+		-18,
+	),
+	new Vector3(130, 0, 65),
+);
+
+world.add(box1);
+world.add(box2);
 
 rayTracer.renderImage(camera, world, sample, img_width, aspect_ratio);

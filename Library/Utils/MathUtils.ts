@@ -19,3 +19,8 @@ export function clamp(x: number, min: number, max: number): number {
 export function degreeToRadian(degree: number): number {
 	return degree * Math.PI / 180.0;
 }
+
+export function abs(value: number): number {
+	value = +value;
+	return value < 0 ? -value : value;
+}

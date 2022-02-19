@@ -13,9 +13,9 @@ export class CheckerTexture implements Texture {
 		this.odd = c2;
 	}
 
-	value(u: number, v: number, p: Point): Color {
-		const sines = Math.sin(10 * p.getX) * Math.sin(10 * p.getY) *
-			Math.sin(10 * p.getZ);
+	value(_u: number, _v: number, p: Point): Color {
+		const sines = Math.sin(10 * p.x) * Math.sin(10 * p.y) *
+			Math.sin(10 * p.z);
 		if (sines < 0) {
 			return this.odd.value(
 				Record.Instance.u,

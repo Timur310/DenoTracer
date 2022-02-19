@@ -1,6 +1,6 @@
 import { Color } from "../Color.ts";
 import { Ray } from "../Ray.ts";
-import { multiplyVector, unitVector } from "./vecUtil.ts";
+import { multiplyVector } from "./vecUtil.ts";
 import { HitableList } from "../HittableList.ts";
 import { Record } from "../Record.ts";
 import { clamp } from "./MathUtils.ts";
@@ -8,9 +8,9 @@ import { clamp } from "./MathUtils.ts";
 export function writeColor(pixeColor: Color, sample: number): string {
 	const scale = 1.0 / sample;
 
-	let r = pixeColor.getX;
-	let g = pixeColor.getY;
-	let b = pixeColor.getZ;
+	let r = pixeColor.x;
+	let g = pixeColor.y;
+	let b = pixeColor.z;
 
 	r = Math.sqrt(scale * r);
 	g = Math.sqrt(scale * g);

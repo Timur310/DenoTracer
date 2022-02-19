@@ -1,7 +1,7 @@
 import { Hittable } from "../Hittable.ts";
 import { Material } from "../Materials/Material.ts";
 import { Ray } from "../Ray.ts";
-import { addVector, addVectorN, substractVector } from "../Utils/vecUtil.ts";
+import { addVector, substractVector } from "../Utils/vecUtil.ts";
 import { Vector3 } from "../Vector3.ts";
 import { Record } from "../Record.ts";
 import { aabb } from "../aabb.ts";

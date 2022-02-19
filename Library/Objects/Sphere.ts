@@ -33,8 +33,8 @@ export class Sphere implements Hittable {
 	}
 
 	public static sphereUV(p: Point): void {
-		const theta = Math.acos(-p.getY);
-		const phi = Math.atan2(-p.getZ, p.getX) + Math.PI;
+		const theta = Math.acos(-p.y);
+		const phi = Math.atan2(-p.z, p.x) + Math.PI;
 
 		Record.Instance.u = phi / (2 * Math.PI);
 		Record.Instance.v = theta / Math.PI;

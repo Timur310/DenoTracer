@@ -39,12 +39,12 @@ export class xz_rect implements Hittable {
 	}
 
 	hit(r: Ray, t_min: number, t_max: number): boolean {
-		const t = (this.k - r.getOrigin.getY) / r.getDirection.getY;
+		const t = (this.k - r.getOrigin.y) / r.getDirection.y;
 		if (t < t_min || t > t_max) {
 			return false;
 		}
-		const x = r.getOrigin.getX + t * r.getDirection.getX;
-		const z = r.getOrigin.getZ + t * r.getDirection.getZ;
+		const x = r.getOrigin.x + t * r.getDirection.x;
+		const z = r.getOrigin.z + t * r.getDirection.z;
 		if (x < this.x0 || x > this.x1 || z < this.z0 || z > this.z1) {
 			return false;
 		}

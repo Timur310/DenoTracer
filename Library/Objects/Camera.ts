@@ -82,8 +82,8 @@ export class Camera {
 
 	getRay(u: number, v: number): Ray {
 		const rd = randomInUnitDisk().multiplyN(this.lensRadius);
-		const offset = multiplyVectorN(this.u, rd.getX).add(
-			multiplyVectorN(this.v, rd.getY),
+		const offset = multiplyVectorN(this.u, rd.x).add(
+			multiplyVectorN(this.v, rd.y),
 		);
 
 		const a1 = multiplyVectorN(this.horizontal, u);

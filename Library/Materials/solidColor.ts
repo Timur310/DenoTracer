@@ -9,7 +9,7 @@ export class SolidColor implements Texture {
 		this.color = c ? c : new Color();
 	}
 
-	value(u: number, v: number, p: Point): Color {
+	value(_u: number, _v: number, _p: Point): Color {
 		return this.color;
 	}
 }

@@ -1,28 +1,28 @@
 import { Vector3 } from "../Vector3.ts";
-import { random, randomBetween } from "./MathUtils.ts";
+import { abs, random, randomBetween } from "./MathUtils.ts";
 
 export function addVector(u: Vector3, v: Vector3): Vector3 {
-	return new Vector3(u.getX + v.getX, u.getY + v.getY, u.getZ + v.getZ);
+	return new Vector3(u.x + v.x, u.y + v.y, u.z + v.z);
 }
 
 export function addVectorN(u: Vector3, n: number): Vector3 {
-	return new Vector3(u.getX + n, u.getY + n, u.getZ + n);
+	return new Vector3(u.x + n, u.y + n, u.z + n);
 }
 
 export function substractVector(u: Vector3, v: Vector3): Vector3 {
-	return new Vector3(u.getX - v.getX, u.getY - v.getY, u.getZ - v.getZ);
+	return new Vector3(u.x - v.x, u.y - v.y, u.z - v.z);
 }
 
 export function substractVectorN(u: Vector3, n: number): Vector3 {
-	return new Vector3(u.getX - n, u.getY - n, u.getZ - n);
+	return new Vector3(u.x - n, u.y - n, u.z - n);
 }
 
 export function multiplyVector(u: Vector3, v: Vector3): Vector3 {
-	return new Vector3(u.getX * v.getX, u.getY * v.getY, u.getZ * v.getZ);
+	return new Vector3(u.x * v.x, u.y * v.y, u.z * v.z);
 }
 
 export function multiplyVectorN(u: Vector3, t: number): Vector3 {
-	return new Vector3(u.getX * t, u.getY * t, u.getZ * t);
+	return new Vector3(u.x * t, u.y * t, u.z * t);
 }
 
 export function divideVectorN(u: Vector3, t: number): Vector3 {
@@ -30,14 +30,14 @@ export function divideVectorN(u: Vector3, t: number): Vector3 {
 }
 
 export function dot(u: Vector3, v: Vector3): number {
-	return u.getX * v.getX + u.getY * v.getY + u.getZ * v.getZ;
+	return u.x * v.x + u.y * v.y + u.z * v.z;
 }
 
 export function cross(u: Vector3, v: Vector3): Vector3 {
 	return new Vector3(
-		u.getY * v.getZ - u.getZ * v.getY,
-		u.getZ * v.getX - u.getX * v.getY,
-		u.getX * v.getY - u.getY * v.getX,
+		u.y * v.z - u.z * v.y,
+		u.z * v.x - u.x * v.y,
+		u.x * v.y - u.y * v.x,
 	);
 }
 
@@ -93,7 +93,7 @@ export function refract(
 	const v = addVector(uv, multiplyVectorN(n, cos_theta));
 	const r_out_perp = multiplyVectorN(v, etai_over_etat);
 
-	const p = -Math.sqrt(Math.abs(1.0 - r_out_perp.length()));
+	const p = -Math.sqrt(abs(1.0 - r_out_perp.length()));
 	const r_out_parallel = multiplyVectorN(n, p);
 
 	return addVector(r_out_perp, r_out_parallel);
