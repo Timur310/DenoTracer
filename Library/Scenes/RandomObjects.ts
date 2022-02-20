@@ -10,7 +10,6 @@ import { RayTrace } from "../RayTrace.ts";
 import { Camera } from "../Objects/Camera.ts";
 import { Vector3 } from "../Vector3.ts";
 import { DiffuseLight } from "../Materials/DiffuseLight.ts";
-import { Metal } from "../Materials/Metal.ts";
 import { xz_rect } from "../Objects/xz_rect.ts";
 import { CheckerTexture } from "../Materials/CheckerTexture.ts";
 
@@ -50,8 +49,8 @@ const lookFrom = new Point(478, 278, -600);
 const lookat = new Point(278, 278, 0);
 const vfov = 40;
 const aspect_ratio = 1;
-const samples = 100;
-const imgWidth = 600;
+const samples = 75;
+const imgWidth = 300;
 const world = new HitableList();
 
 const camera = new Camera(

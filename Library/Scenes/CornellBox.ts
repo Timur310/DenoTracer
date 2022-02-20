@@ -17,7 +17,7 @@ import { Translate } from "../Objects/Translate.ts";
 const rayTracer = new RayTrace();
 
 // settings
-const sample = 100;
+const sample = 300;
 const img_width = 600;
 const aspect_ratio = 1;
 
