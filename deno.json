@@ -1,4 +1,11 @@
 {
-    "compilerOptions": {
-    }
+	"compilerOptions": {
+		"strict": true
+	},
+	"fmt": {
+		"options": {
+			"useTabs": true,
+			"indentWidth": 4
+		}
+	}
 }

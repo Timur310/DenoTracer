@@ -1,102 +1,102 @@
+import { abs } from "./Utils/MathUtils.ts";
+
 export class Vector3 {
-  private x: number;
-  private y: number;
-  private z: number;
+	Vector = new Float32Array(3);
 
-  constructor(x?: number, y?: number, z?: number) {
-    this.x = x ? x : 0;
-    this.y = y ? y : 0;
-    this.z = z ? z : 0;
-  }
+	constructor(x?: number, y?: number, z?: number) {
+		this.Vector[0] = x ? x : 0;
+		this.Vector[1] = y ? y : 0;
+		this.Vector[2] = z ? z : 0;
+	}
 
-  atIndex(n: number): number {
-    switch (n) {
-      case 0:
-        return this.x;
-      case 1:
-        return this.y;
-      case 2:
-        return this.z;
-    }
-    return -1;
-  }
+	atIndex(n: number): number {
+		return this.Vector[n];
+	}
 
-  add(v: Vector3): Vector3 {
-    this.x += v.x;
-    this.y += v.y;
-    this.z += v.z;
-    return this;
-  }
+	atIndexSet(idx: number, value: number): void {
+		this.Vector[idx] = value;
+	}
 
-  substract(v: Vector3): Vector3 {
-    this.x -= v.x;
-    this.y -= v.y;
-    this.z -= v.z;
-    return this;
-  }
+	add(v: Vector3): Vector3 {
+		this.Vector[0] += v.Vector[0];
+		this.Vector[1] += v.Vector[1];
+		this.Vector[2] += v.Vector[2];
+		return this;
+	}
 
-  divide(v: Vector3): Vector3 {
-    this.x /= v.x;
-    this.y /= v.y;
-    this.z /= v.z;
-    return this;
-  }
+	substract(v: Vector3): Vector3 {
+		this.Vector[0] -= v.Vector[0];
+		this.Vector[1] -= v.Vector[1];
+		this.Vector[2] -= v.Vector[2];
+		return this;
+	}
 
-  divideN(n: number): Vector3 {
-    this.x /= n;
-    this.y /= n;
-    this.z /= n;
-    return this;
-  }
+	divide(v: Vector3): Vector3 {
+		this.Vector[0] /= v.Vector[0];
+		this.Vector[1] /= v.Vector[1];
+		this.Vector[2] /= v.Vector[2];
+		return this;
+	}
 
-  negate(): Vector3 {
-    this.x = Math.abs(this.x) * -1;
-    this.y = Math.abs(this.x) * -1;
-    this.z = Math.abs(this.x) * -1;
-    return this;
-  }
+	divideN(n: number): Vector3 {
+		this.Vector[0] /= n;
+		this.Vector[1] /= n;
+		this.Vector[2] /= n;
+		return this;
+	}
 
-  multiplyN(n: number): Vector3 {
-    this.x *= n;
-    this.y *= n;
-    this.z *= n;
-    return this;
-  }
+	negate(): Vector3 {
+		this.Vector[0] = abs(this.Vector[0]) * -1;
+		this.Vector[1] = abs(this.Vector[1]) * -1;
+		this.Vector[2] = abs(this.Vector[2]) * -1;
+		return this;
+	}
 
-  multiply(v: Vector3): Vector3 {
-    this.x *= v.x;
-    this.x *= v.x;
-    this.x *= v.x;
-    return this;
-  }
+	multiplyN(n: number): Vector3 {
+		this.Vector[0] *= n;
+		this.Vector[1] *= n;
+		this.Vector[2] *= n;
+		return this;
+	}
 
-  length(): number {
-    return this.lengthSquared();
-  }
+	multiply(v: Vector3): Vector3 {
+		this.Vector[0] *= v.Vector[0];
+		this.Vector[1] *= v.Vector[1];
+		this.Vector[2] *= v.Vector[2];
+		return this;
+	}
 
-  sqrtLength(): number {
-    return Math.sqrt(this.length());
-  }
+	length(): number {
+		return this.lengthSquared();
+	}
 
-  nearZero(): boolean {
-    const s = 0.00000001;
-    return (Math.abs(this.getX) < s) && (Math.abs(this.getY) < s) &&
-      (Math.abs(this.getZ) < s);
-  }
+	sqrtLength(): number {
+		return Math.sqrt(this.length());
+	}
 
-  private lengthSquared(): number {
-    return this.x * this.x + this.y * this.y + this.z * this.z;
-  }
+	nearZero(): boolean {
+		const s = 0.00000001;
+		return (
+			abs(this.Vector[0]) < s &&
+			abs(this.Vector[1]) < s &&
+			abs(this.Vector[2]) < s
+		);
+	}
 
-  get getX(): number {
-    return this.x;
-  }
+	private lengthSquared(): number {
+		return this.Vector[0] * this.Vector[0] +
+			this.Vector[1] * this.Vector[1] + this.Vector[2] * this.Vector[2];
+	}
 
-  get getY(): number {
-    return this.y;
-  }
+	get x(): number {
+		return this.Vector[0];
+	}
 
-  get getZ(): number {
-    return this.z;
-  }
+	get y(): number {
+		return this.Vector[1];
+	}
+
+	get z(): number {
+		return this.Vector[2];
+	}
 }
