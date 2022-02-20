@@ -36,13 +36,17 @@ pathtracer.
 ## Sample Images
 
 <p align="center">
-  <img src="Images/sample_scene.png" alt="100 sample" width="400"/>
+  <img src="Images/Spheres_sample.png" alt="100 sample" width="400"/>
   <img src="Images/Spheres_sample_denoised.jpg" alt="100 sample Denoised" width="400"/>
 </p>
 
 <p align="center">
-  <img src="Images/CornellBox_scene.png" alt="600 samples sample" width="600"/>
+  <img src="Images/CornellBox.png" alt="600 samples sample" width="600"/>
   <p align="center"> 600 samples </p>
+</p>
+<p align="center">
+  <img src="Images/MultipleObjects.png" alt="300 samples sample" width="300"/>
+  <p align="center"> 300 samples </p>
 </p>
 
 
