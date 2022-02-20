@@ -10,25 +10,28 @@
   <h3 align="center">DenoTracer</h3>
 
   <p align="center">
-    Basic CPU raytracer built with Typescript and Deno
+    Basic CPU pathtracer built with Typescript and Deno
 </div>
 
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
 
-This project started as hobby learning the basics of raytracing, using typescript.
-Probably not the fastest and most effiecent raytracer on the net, but it's still does the job.
-The whole project is still in development as I'm still learning the fundamentals of raytracing.
+This project started as a hobby to dive myself depper into computer graphic and finaly write my own pathtracer.
+The choice of programming language is probably not the smartest one to write a a pathtracer, 
+since javascript is single-threaded but javascript is my main language so why not?
+No optimization done while writing the project and heavily inspired by the raytracing in one weekend series.
+Since it would take ages to get a clear image, all sample images are with low res low samples(around 100-300) depending on the scene.
+While I was going trough the project I learned so much about vectors, bounding boxes and the basic concept of tracing with rays and constructing an image.
+Time to time I do some small refactors fot the project but my next step will be to dive myself into raymarching or even WEBGL to write a better performing
+pathtracer.
 
 ### Features
  
- Current features of the raytracer.
-
-* Multiple material handling (Dialectric, Lambertian, Metal)
+* Multiple material handling (Dialectric, Lambertian, Metal, even a checkerMaterial)
 * Antialiasing
 * Depth of field
-* Basic sphere object
+* plane, sphere and box geometry
 
 ## Sample Images
 
